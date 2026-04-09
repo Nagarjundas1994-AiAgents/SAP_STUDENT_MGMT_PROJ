@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:f="sap.ui.layout.form"
+   xmlns:core="sap.ui.core">
+   <Dialog
+      id="Inputbox"
+      title="Create student">
+      <content>
+         <f:SimpleForm id="createStudentForm" editable="true" layout="ResponsiveGridLayout">
+            <!-- <Label id="id" text="ID" required="true"/>
+            <Input id="idhae" /> -->
+            <Label id="createFirstNameLabel" text="First Name" required="true"/>
+            <Input id="firstNameInput" />
+            <Label id="createLastNameLabel" text="Last Name" required="true"/>
+            <Input id="lastNameInput" />
+            <Label id="createEmailLabel" text="Email" required="true"/>
+            <Input id="emailInput" type="Email"/>
+            <Label id="createAgeLabel" text="Age" required="true"/>
+            <Input id="ageInput" type="Number"/>
+            <Label id="createatt" text="CreatedAt" required="true"/>
+            <DatePicker id="createdat" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" />
+         </f:SimpleForm>
+      </content>
+      <beginButton><Button id="saveButton" text="Save" type="Emphasized" press="onDialogSave"/></beginButton>
+      <endButton><Button id="cancelButton" text="Cancel" press="onDialogCancel"/></endButton>
+   </Dialog>
+</core:FragmentDefinition> 
+
+

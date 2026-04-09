@@ -1,0 +1,103 @@
+_schema-version: 3.3.0
+ID: Student_Management_System
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: Student_Management_System-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: Student_Management_System-auth
+  - name: Student_Management_System-db
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    instances: 1
+  build-parameters:
+    builder: npm-ci
+- name: Student_Management_System-db-deployer
+  type: hdb
+  path: gen/db
+  requires:
+  - name: Student_Management_System-db
+  parameters:
+    buildpack: nodejs_buildpack
+- name: Student_Management_System-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: Student_Management_System-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - sapfioriappstudentmanagement.zip
+      name: sapfioriappstudentmanagement
+      target-path: resources/
+- name: sapfioriappstudentmanagement
+  type: html5
+  path: app/student_management
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: Student_Management_System-auth
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      oauth2-configuration:
+        credential-types:
+        - binding-secret
+        - x509
+      tenant-mode: dedicated
+      xsappname: Student_Management_System-${org}-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
+- name: Student_Management_System-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+- name: Student_Management_System-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: Student_Management_System-html5-service
+    service-plan: app-host
+- name: Student_Management_System-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: Student_Management_System-destination-service
+    service-plan: lite
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm ci
+    - npx cds build --production

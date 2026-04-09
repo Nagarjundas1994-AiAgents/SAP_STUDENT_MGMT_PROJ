@@ -1,0 +1,71 @@
+<mvc:View controllerName="sapfioriapp.studentmanagement.controller.Student"
+	id="studentView"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+	height="100%">
+    <m:Page
+		id="page"
+		showHeader="false"
+		class="sapUiContentPadding">
+		<m:content>
+		<m:HBox id="createStudentactionHBox">
+								<m:Button id = "createStudentButton" text= "Add Student" icon="sap-icon://edit" type="Transparent" press="onClickCreateStudent" ariaLabelledBy="editButtonLabel"/>
+								<m:Button id = "testStudentButton" text= "test" type="Transparent" press="testClickfunc" ariaLabelledBy="editButtonLabel"/>
+							</m:HBox>
+		
+			<m:Table
+				id="student_table"
+				items="{path: '/Students'}"
+				mode="MultiSelect"
+				ariaLabelledBy="title">
+				<m:headerToolbar>
+					<m:OverflowToolbar id="overflowToolbar" style="Clear">
+						<m:Title id="title" text="Students"/>
+						<m:ToolbarSpacer id="toolbarSpacer"/>
+					</m:OverflowToolbar>
+				</m:headerToolbar>
+				<m:columns>
+				    <m:Column id="idcolumn">
+						<m:Label id="idcolumnlabel" text="ID" />
+					</m:Column>
+					<m:Column id="firstNameColumn">
+						<m:Label id="firstNameLabel" text="First Name" />
+					</m:Column>
+					<m:Column id="lastNameColumn">
+						<m:Label id="lastNameLabel" text="Last Name" />
+					</m:Column>
+					<m:Column id="emailColumn">
+						<m:Label id="emailLabel" text="Email" />
+					</m:Column>
+					<m:Column id="ageColumn">
+						<m:Label id="ageLabel" text="Age" />
+					</m:Column>
+					<m:Column id="createdDateColumn">
+						<m:Label id="createdDateLabel" text="Created Date" />
+					</m:Column>
+					<m:Column id="actionColumn">
+						<m:Label id="actionLabel" text="Action" />
+					</m:Column>
+				</m:columns>
+				<m:items>
+					<m:ColumnListItem id="studentListItem">
+						<m:cells>
+						    <m:Text id="Idtext" text="{ID}" wrapping="false"/>
+ 							<m:Text id="firstNameText" text="{FirstName}" wrapping="false"/>
+							<m:Text id="lastNameText" text="{LastName}" wrapping="false"/>
+							<m:Text id="emailText" text="{Email}" wrapping="false"/>
+							<m:Text id="ageText" text="{Age}" wrapping="false"/>
+							<m:Text id="createdDateText" text="{CreatedDate}" wrapping="false"/>
+							<m:HBox id="actionButtonsHBox">
+								<m:Button id="editButtonText" icon="sap-icon://edit" type="Transparent" press="onEditPress" ariaLabelledBy="editButtonLabel"/>
+								<m:Button id="deleteButtonText" icon="sap-icon://delete" type="Transparent" press="onDeletePress" ariaLabelledBy="deleteButtonLabel"/>
+							</m:HBox>
+						</m:cells>
+					</m:ColumnListItem>
+				</m:items>
+			</m:Table>
+		</m:content>
+	</m:Page>
+</mvc:View>
