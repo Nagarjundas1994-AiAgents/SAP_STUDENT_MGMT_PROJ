@@ -1,4 +1,4 @@
-using {my.school as db} from '../srv/schema';
+using {my.school as db} from '../db/schema';
 
 service StudentService{
     entity Students as projection on db.Students;

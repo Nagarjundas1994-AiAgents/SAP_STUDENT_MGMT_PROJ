@@ -1,0 +1,226 @@
+<mvc:View
+    controllerName="sapfioriapp.studentmanagement.controller.student_details"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page
+        id="studentdetailspage"
+        title="Student Details"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
+        <content>
+
+            <!-- ─── PROFILE HEADER (centered) ─── -->
+            <VBox
+                id="profileHeaderBox"
+                alignItems="Center"
+                justifyContent="Center"
+                class="sapUiLargeMarginTop sapUiLargeMarginBottom">
+
+                <!-- Profile Image -->
+                <Avatar
+                    id="studentAvatar"
+                    src="{ImageUrl}"
+                    displaySize="XL"
+                    class="sapUiSmallMarginBottom"/>
+
+                <!-- Full Name -->
+                <Title
+                    id="studentNameTitle"
+                    text="{FirstName} {LastName}"
+                    level="H2"
+                    textAlign="Center"
+                    class="sapUiSmallMarginBottom"/>
+
+                <!-- Email -->
+                <Text
+                    id="studentEmailText"
+                    text="{Email}"
+                    textAlign="Center"
+                    class="sapUiTinyMarginBottom"/>
+
+                <!-- Status + Dream Job badges -->
+                <HBox
+                    id="badgeBox"
+                    alignItems="Center"
+                    justifyContent="Center"
+                    class="sapUiSmallMarginTop">
+                    <ObjectStatus
+                        id="studentStatusBadge"
+                        text="{Status}"
+                        state="{= ${Status} === 'Active' ? 'Success' : 'Error' }"
+                        icon="{= ${Status} === 'Active' ? 'sap-icon://accept' : 'sap-icon://decline' }"
+                        class="sapUiSmallMarginEnd"/>
+                    <ObjectStatus
+                        id="studentDreamJobBadge"
+                        text="{DreamJob}"
+                        state="Information"
+                        icon="sap-icon://work-history"/>
+                </HBox>
+
+            </VBox>
+
+            <!-- ─── ICON TAB BAR ─── -->
+            <IconTabBar
+                id="idIconTabBar"
+                class="sapUiResponsiveContentPadding">
+
+                <items>
+
+                    <!-- ── TAB 1: Personal Info ── -->
+                    <IconTabFilter
+                        id="tabPersonalInfo"
+                        text="Personal Info"
+                        icon="sap-icon://person-placeholder">
+
+                        <f:SimpleForm
+                            id="formPersonalInfo"
+                            editable="false"
+                            layout="ResponsiveGridLayout"
+                            labelSpanL="4" labelSpanM="4"
+                            emptySpanL="1" emptySpanM="1"
+                            columnsL="2" columnsM="2"
+                            class="sapUiMediumMargin">
+                            <f:content>
+
+                                <core:Title text="Basic Information"/>
+
+                                <Label text="Student ID"/>
+                                <Text text="{Id}"/>
+
+                                <Label text="First Name"/>
+                                <Text text="{FirstName}"/>
+
+                                <Label text="Last Name"/>
+                                <Text text="{LastName}"/>
+
+                                <Label text="Gender"/>
+                                <Text text="{Gender}"/>
+
+                                <Label text="Date of Birth"/>
+                                <Text text="{DateOfBirth}"/>
+
+                                <Label text="Age"/>
+                                <Text text="{Age}"/>
+
+                                <Label text="Nationality"/>
+                                <Text text="{Nationality}"/>
+
+                                <core:Title text="Contact Information"/>
+
+                                <Label text="Email"/>
+                                <Link text="{Email}" href="mailto:{Email}"/>
+
+                                <Label text="Phone Number"/>
+                                <Text text="{PhoneNumber}"/>
+
+                                <Label text="City"/>
+                                <Text text="{City}"/>
+
+                                <Label text="Country"/>
+                                <Text text="{Country}"/>
+
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+
+                    <!-- ── TAB 2: Health Info ── -->
+                    <IconTabFilter
+                        id="tabHealthInfo"
+                        text="Health Info"
+                        icon="sap-icon://heart">
+
+                        <f:SimpleForm
+                            id="formHealthInfo"
+                            editable="false"
+                            layout="ResponsiveGridLayout"
+                            labelSpanL="4" labelSpanM="4"
+                            emptySpanL="1" emptySpanM="1"
+                            columnsL="2" columnsM="2"
+                            class="sapUiMediumMargin">
+                            <f:content>
+
+                                <core:Title text="Health Details"/>
+
+                                <Label text="Blood Group"/>
+                                <ObjectStatus
+                                    text="{BloodGroup}"
+                                    state="Warning"
+                                    icon="sap-icon://stethoscope"/>
+
+                                <Label text="Height (cm)"/>
+                                <Text text="{Height} cm"/>
+
+                                <Label text="Weight (kg)"/>
+                                <Text text="{Weight} kg"/>
+
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+
+                    <!-- ── TAB 3: Other Info ── -->
+                    <IconTabFilter
+                        id="tabOtherInfo"
+                        text="Other Info"
+                        icon="sap-icon://activities">
+
+                        <f:SimpleForm
+                            id="formOtherInfo"
+                            editable="false"
+                            layout="ResponsiveGridLayout"
+                            labelSpanL="4" labelSpanM="4"
+                            emptySpanL="1" emptySpanM="1"
+                            columnsL="2" columnsM="2"
+                            class="sapUiMediumMargin">
+                            <f:content>
+
+                                <core:Title text="Interests &amp; Career"/>
+
+                                <Label text="Dream Job"/>
+                                <Text text="{DreamJob}"/>
+
+                                <Label text="Hobby"/>
+                                <Text text="{Hobby}"/>
+
+                                <core:Title text="System Info"/>
+
+                                <Label text="Created Date"/>
+                                <Text text="{CreatedDate}"/>
+
+                                <Label text="Status"/>
+                                <ObjectStatus
+                                    text="{Status}"
+                                    state="{= ${Status} === 'Active' ? 'Success' : 'Error' }"/>
+
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+
+                </items>
+            </IconTabBar>
+
+        </content>
+
+        <!-- ─── FOOTER ─── -->
+        <footer>
+            <OverflowToolbar id="footerToolbar">
+                <ToolbarSpacer/>
+                <Button
+                    text="Edit"
+                    type="Emphasized"
+                    icon="sap-icon://edit"
+                    press=".onEditStudent"/>
+                <Button
+                    text="Delete"
+                    type="Reject"
+                    icon="sap-icon://delete"
+                    press=".onDeleteStudent"/>
+            </OverflowToolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

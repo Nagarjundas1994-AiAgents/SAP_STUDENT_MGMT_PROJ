@@ -52,7 +52,7 @@
 				<m:items>
 					<m:ColumnListItem id="studentListItem">
 						<m:cells>
-						    <m:Text id="Idtext" text="{ID}" wrapping="false"/>
+						    <m:Text id="Idtext" text="{Id}" wrapping="false"/>
  							<m:Text id="firstNameText" text="{FirstName}" wrapping="false"/>
 							<m:Text id="lastNameText" text="{LastName}" wrapping="false"/>
 							<m:Text id="emailText" text="{Email}" wrapping="false"/>
@@ -61,6 +61,7 @@
 							<m:HBox id="actionButtonsHBox">
 								<m:Button id="editButtonText" icon="sap-icon://edit" type="Transparent" press="onEditPress" ariaLabelledBy="editButtonLabel"/>
 								<m:Button id="deleteButtonText" icon="sap-icon://delete" type="Transparent" press="onDeletePress" ariaLabelledBy="deleteButtonLabel"/>
+								<m:Button id="stu_details" icon="sap-icon://business-card" type="Transparent" press="gotoStudentDetails"/>
 							</m:HBox>
 						</m:cells>
 					</m:ColumnListItem>

@@ -43,7 +43,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.146.0",
       "libs": {
@@ -100,12 +100,20 @@
           "target": [
             "Targetstudent"
           ]
+        },{
+          "pattern": "student_detail/{studentId}",
+          "name": "stu_detail",
+          "target": "Student_detail_page"
         }
       ],
       "targets": {
         "Targetstudent": {
           "id": "student",
           "name": "student"
+        },
+        "Student_detail_page": {
+          "id": "detail",
+          "name": "student_details"
         }
       }
     },

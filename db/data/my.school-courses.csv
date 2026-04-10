@@ -1,0 +1,16 @@
+Id;CourseName;CourseCode;Instructor;Department;Credits;Duration(Weeks);Schedule;Room;Capacity;EnrolledStudents;StartDate;EndDate;Fee($);Mode;Level;Language;Rating;Status;Description
+1;Introduction to Programming;CS101;Dr. Alan Turing;Computer Science;3;12;Mon/Wed 09:00;Room A101;40;35;2026-01-10;2026-04-05;299;Online;Beginner;English;4.8;Active;Fundamentals of coding using Python
+2;Data Structures & Algorithms;CS201;Dr. Grace Hopper;Computer Science;4;14;Tue/Thu 10:00;Room A102;35;30;2026-01-12;2026-04-19;349;In-Person;Intermediate;English;4.7;Active;Core DSA concepts and problem solving
+3;Web Development Basics;CS102;Prof. Tim Berners;Computer Science;3;10;Mon/Fri 11:00;Room B201;45;42;2026-01-15;2026-03-27;279;Hybrid;Beginner;English;4.6;Active;HTML CSS and JavaScript fundamentals
+4;Database Management;CS301;Dr. Edgar Codd;Computer Science;4;12;Wed/Fri 09:00;Room B202;30;28;2026-01-20;2026-04-12;329;In-Person;Intermediate;English;4.5;Active;SQL and relational database design
+5;Machine Learning;CS401;Dr. Andrew Ng;Artificial Intelligence;4;16;Tue/Thu 14:00;Room C301;25;20;2026-01-10;2026-05-02;499;Online;Advanced;English;4.9;Active;Supervised and unsupervised learning models
+6;Digital Marketing;MK101;Prof. Seth Godin;Marketing;3;8;Mon/Wed 13:00;Room D101;50;47;2026-01-14;2026-03-11;249;Online;Beginner;English;4.4;Active;SEO social media and content strategy
+7;Financial Accounting;FN101;Dr. Warren Black;Finance;3;12;Tue/Fri 10:00;Room D102;40;38;2026-01-13;2026-04-06;319;In-Person;Beginner;English;4.3;Active;Basic accounting principles and practices
+8;Business Communication;BA101;Prof. Robin Wright;Business Admin;2;6;Wed 15:00;Room E201;55;50;2026-01-16;2026-03-04;199;Hybrid;Beginner;English;4.2;Active;Professional writing and presentation skills
+9;Cybersecurity Fundamentals;CS302;Dr. Kevin Mitnick;Computer Science;4;14;Mon/Thu 11:00;Room A103;30;25;2026-01-11;2026-04-19;429;Online;Intermediate;English;4.8;Active;Network security ethical hacking basics
+10;Graphic Design;GD101;Prof. Paula Scher;Design;3;10;Tue/Fri 13:00;Room F101;35;33;2026-01-15;2026-03-27;289;In-Person;Beginner;English;4.6;Active;Adobe tools visual design principles
+11;Mobile App Development;CS402;Dr. Steve Wozniak;Computer Science;4;14;Mon/Wed 14:00;Room A104;28;24;2026-01-20;2026-04-26;459;Hybrid;Advanced;English;4.7;Active;iOS and Android app development
+12;Psychology 101;PS101;Dr. Sigmund Wells;Psychology;3;12;Tue/Thu 09:00;Room G201;60;55;2026-01-13;2026-04-06;229;In-Person;Beginner;English;4.5;Active;Introduction to human behavior and mind
+13;Statistics & Probability;MT201;Dr. Carl Gauss;Mathematics;3;12;Mon/Fri 10:00;Room H101;40;36;2026-01-12;2026-04-05;299;Online;Intermediate;English;4.4;Active;Statistical methods and data interpretation
+14;Cloud Computing;CS403;Dr. Jeff Dean;Computer Science;4;16;Wed/Fri 14:00;Room A105;25;22;2026-01-14;2026-05-08;479;Online;Advanced;English;4.9;Active;AWS Azure and GCP fundamentals
+15;English Literature;EN101;Prof. Jane Austen;Literature;2;10;Thu 11:00;Room I201;50;45;2026-01-16;2026-03-27;179;In-Person;Beginner;English;4.1;Active;Classic and modern literary analysis

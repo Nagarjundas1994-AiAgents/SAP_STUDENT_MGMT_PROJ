@@ -1,6 +1,3 @@
-/**
- * @namespace sapfioriapp.studentmanagement.controller
- */
 sap.ui.define([
     "sap/m/MessageToast",
     "sap/ui/core/mvc/Controller"
@@ -74,7 +71,7 @@ sap.ui.define([
                     // For OData V4, we submit batch changes. 
                     // If your model is in 'Auto' mode, this might even be optional,
                     // but calling it ensures the data is persisted before closing.
-                    await oModel.submitBatch(oModel.getUpdateGroupId()); 
+                    await oModel.submitBatch(oModel.getUpdateGroupId());
                     MessageToast.show("Student record updated successfully.");
                 } else {
                     // Create mode: Create a new entity
@@ -136,7 +133,7 @@ sap.ui.define([
                 console.error("Delete Error: ", oError);
             }
 
-          
+
         },
 
         async testClickfunc(oEvent) {
@@ -145,6 +142,30 @@ sap.ui.define([
             console.log(oEvent.getSource());
             console.log(oEvent.getSource().getBindingContext());
 
-        }
+        },
+        // async gotoStudentDetails(){
+        //     const oRouter = this.getOwnerComponent().getRouter();
+        //     oRouter.navTo("stu_detail")
+        // }
+
+        async gotoStudentDetails(oEvent) {
+            var oItem = oEvent.getSource();
+            var oContext = oItem.getBindingContext(); // no model name — default ""
+
+            if (!oContext) {
+                console.error("No binding context found");
+                return;
+            }
+
+            // oContext.getPath() returns "/Students(42)"
+            // substring(1)      returns  "Students(42)"
+            var sEncodedPath = window.encodeURIComponent(
+                oContext.getPath().substring(1)
+            );
+
+            this.getOwnerComponent().getRouter().navTo("stu_detail", {
+                studentId: sEncodedPath  // "Students(42)" in URL
+            });
+        },
     });
 });

@@ -1,11 +1,16 @@
-Id;FirstName;LastName;Email;Age;CreatedDate
-1;Alice;Smith;alice.smith@example.com;20;2026-04-04
-2;Bob;Jones;bob.jones@example.com;20;2026-04-04
-3;Charlie;Brown;charlie.brown@example.com;20;2026-04-04
-4;Diana;Prince;diana.prince@example.com;20;2026-04-04
-5;Evan;Wright;evan.wright@example.com;20;2026-04-04
-6;Fiona;Gallagher;fiona.gallagher@example.com;20;2026-04-04
-7;George;Miller;george.miller@example.com;20;2026-04-04
-8;Hannah;Abbott;hannah.abbott@example.com;20;2026-04-04
-9;Ian;Malcolm;ian.malcolm@example.com;20;2026-04-04
-10;Julia;Roberts;julia.roberts@example.com;20;2026-04-04
+Id;FirstName;LastName;Email;Age;CreatedDate;ImageUrl;DateOfBirth;PhoneNumber;City;Country;Gender;DreamJob;Status;BloodGroup;Height;Weight;Nationality;Hobby
+1;Alice;Smith;alice.smith@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=1;2006-01-15;+1234567890;New York;USA;Female;Student;Active;A+;165;55;American;Reading
+2;Bob;Jones;bob.jones@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=2;2006-05-22;+1234567891;Los Angeles;USA;Male;Developer;Active;O+;178;72;American;Gaming
+3;Charlie;Brown;charlie.brown@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=3;2006-11-30;+1234567892;Chicago;USA;Male;Designer;Active;B+;172;68;American;Drawing
+4;Diana;Prince;diana.prince@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=4;2006-03-12;+1234567893;Houston;USA;Female;Engineer;Active;AB+;160;52;American;Hiking
+5;Evan;Wright;evan.wright@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=5;2006-07-08;+1234567894;Phoenix;USA;Male;Analyst;Active;O-;180;75;American;Swimming
+6;Fiona;Gallagher;fiona.gallagher@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=6;2006-09-19;+1234567895;Philadelphia;USA;Female;Teacher;Active;A-;163;58;American;Cooking
+7;George;Miller;george.miller@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=7;2006-12-05;+1234567896;San Antonio;USA;Male;Student;Inactive;B-;175;70;American;Football
+8;Hannah;Abbott;hannah.abbott@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=8;2006-02-28;+1234567897;San Diego;USA;Female;Nurse;Active;O+;158;50;American;Painting
+9;Ian;Malcolm;ian.malcolm@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=9;2006-04-14;+1234567898;Dallas;USA;Male;Scientist;Active;AB-;182;78;American;Chess
+10;Julia;Roberts;julia.roberts@example.com;20;2026-04-04;https://i.pravatar.cc/150?u=10;2006-10-10;+1234567899;San Jose;USA;Female;Actress;Active;A+;167;54;American;Dancing
+11;Kevin;Spacey;kevin.spacey@example.com;21;2026-04-05;https://i.pravatar.cc/150?u=11;2005-08-12;+1234567800;Austin;USA;Male;Manager;Active;B+;176;80;American;Cycling
+12;Laura;Palmer;laura.palmer@example.com;19;2026-04-05;https://i.pravatar.cc/150?u=12;2007-06-21;+1234567801;Jacksonville;USA;Female;Student;Inactive;O+;162;53;American;Photography
+13;Mike;Wheeler;mike.wheeler@example.com;20;2026-04-05;https://i.pravatar.cc/150?u=13;2006-01-01;+1234567802;Columbus;USA;Male;Gamer;Active;A-;170;65;American;Music
+14;Nancy;Drew;nancy.dry@example.com;22;2026-04-05;https://i.pravatar.cc/150?u=14;2004-05-05;+1234567803;Charlotte;USA;Female;Detective;Active;AB+;164;56;American;Writing
+15;Oscar;Isaac;oscar.isaac@example.com;20;2026-04-05;https://i.pravatar.cc/150?u=15;2006-03-09;+1234567804;Indianapolis;USA;Male;Actor;Active;B+;174;73;American;Travelling

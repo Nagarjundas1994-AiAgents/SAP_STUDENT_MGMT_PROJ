@@ -1,1 +1,1 @@
-using StudentService as service from '../../db/student-service';
+using StudentService as service from '../../srv/student-service';
